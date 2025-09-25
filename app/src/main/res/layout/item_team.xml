@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <TextView
+        android:id="@+id/tvTeamName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="16sp"
+        android:text="Team Name" />
+
+    <TextView
+        android:id="@+id/tvCoach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Coach" />
+
+    <TextView
+        android:id="@+id/tvStadium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stadium" />
+
+    <Button
+        android:id="@+id/btnPlayers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/players"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>
+
+

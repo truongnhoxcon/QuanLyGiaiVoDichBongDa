@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="20dp">
+
+    <EditText
+        android:id="@+id/etName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Tên đội bóng"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etCoach"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="HLV"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/etStadium"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Sân nhà"
+        android:inputType="text" />
+
+</LinearLayout>
+
+

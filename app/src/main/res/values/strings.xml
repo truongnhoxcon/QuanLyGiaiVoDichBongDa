@@ -1,3 +1,13 @@
 <resources>
     <string name="app_name">QuanLyGiaiVoDichBongDa</string>
+    <string name="add">Thêm</string>
+    <string name="cancel">Hủy</string>
+    <string name="ok">OK</string>
+    <string name="add_team_title">Thêm đội bóng</string>
+    <string name="confirm_delete">Xóa "%1$s"?</string>
+    <string name="deleted">Đã xóa %1$s</string>
+    <string name="undo">Hoàn tác</string>
+    <string name="players">Cầu thủ</string>
+    <string name="add_player_title">Thêm cầu thủ</string>
+    <string name="player_info_format">#%1$s - %2$s</string>
 </resources>
