@@ -13,7 +13,7 @@ import com.example.quanlygiaivodichbongda.database.entity.Team
 
 class TeamAdapter(
     private val onClick: (Team) -> Unit,
-    private val onLongClick: (Team) -> Unit
+    private val onDelete: (Team) -> Unit
 ) : ListAdapter<Team, TeamAdapter.TeamVH>(diff) {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TeamVH {
@@ -23,7 +23,7 @@ class TeamAdapter(
     }
 
     override fun onBindViewHolder(holder: TeamVH, position: Int) {
-        holder.bind(getItem(position), onClick, onLongClick)
+        holder.bind(getItem(position), onClick, onDelete)
     }
 
     class TeamVH(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -32,14 +32,18 @@ class TeamAdapter(
         private val stadium: TextView = itemView.findViewById(R.id.tvStadium)
         private val btnPlayers: Button? = itemView.findViewById(R.id.btnPlayers)
 
-        fun bind(item: Team, onClick: (Team) -> Unit, onLongClick: (Team) -> Unit) {
+        fun bind(item: Team, onClick: (Team) -> Unit, onDelete: (Team) -> Unit) {
             name.text = item.ten
             coach.text = item.hlv ?: "—"
             stadium.text = item.sanNha ?: "—"
+
+            // Click vào item hoặc nút "Cầu thủ"
             itemView.setOnClickListener { onClick(item) }
             btnPlayers?.setOnClickListener { onClick(item) }
+
+            // Long click để xoá
             itemView.setOnLongClickListener {
-                onLongClick(item)
+                onDelete(item)
                 true
             }
         }
@@ -47,10 +51,11 @@ class TeamAdapter(
 
     companion object {
         private val diff = object : DiffUtil.ItemCallback<Team>() {
-            override fun areItemsTheSame(oldItem: Team, newItem: Team): Boolean = oldItem.id == newItem.id
-            override fun areContentsTheSame(oldItem: Team, newItem: Team): Boolean = oldItem == newItem
+            override fun areItemsTheSame(oldItem: Team, newItem: Team): Boolean =
+                oldItem.id == newItem.id
+
+            override fun areContentsTheSame(oldItem: Team, newItem: Team): Boolean =
+                oldItem == newItem
         }
     }
 }
-
-

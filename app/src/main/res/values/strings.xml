@@ -1,13 +1,27 @@
 <resources>
-    <string name="app_name">QuanLyGiaiVoDichBongDa</string>
+    <string name="app_name">Quản Lý Giải Vô Địch Bóng Đá</string>
+
+    <!-- Team -->
+    <string name="teams">Danh sách đội</string>
+    <string name="add_team">Thêm đội</string>
+    <string name="add_team_title">Thêm đội mới</string>
+    <string name="confirm_delete">Xác nhận xóa</string>
+    <string name="deleted">Đã xóa %1$s</string>
+    <string name="undo">Hoàn tác</string>
+
+    <!-- Player -->
+    <string name="players">Danh sách cầu thủ</string>
+    <string name="add_player">Thêm cầu thủ</string>
+    <string name="add_player_title">Thêm cầu thủ mới</string>
+
+    <!-- Common actions -->
+    <string name="search">Tìm kiếm</string>
+    <string name="sort">Sắp xếp</string>
+    <string name="refresh">Làm mới</string>
     <string name="add">Thêm</string>
     <string name="cancel">Hủy</string>
     <string name="ok">OK</string>
-    <string name="add_team_title">Thêm đội bóng</string>
-    <string name="confirm_delete">Xóa "%1$s"?</string>
-    <string name="deleted">Đã xóa %1$s</string>
-    <string name="undo">Hoàn tác</string>
-    <string name="players">Cầu thủ</string>
-    <string name="add_player_title">Thêm cầu thủ</string>
-    <string name="player_info_format">#%1$s - %2$s</string>
+
+    <!-- Player info format -->
+    <string name="player_info_format">Số áo: %1$s | Vị trí: %2$s</string>
 </resources>

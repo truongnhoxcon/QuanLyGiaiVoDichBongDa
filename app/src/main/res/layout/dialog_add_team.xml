@@ -3,29 +3,30 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:orientation="vertical"
-    android:padding="20dp">
+    android:padding="16dp">
 
+    <!-- Tên đội -->
     <EditText
-        android:id="@+id/etName"
+        android:id="@+id/etTeamName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Tên đội bóng"
+        android:hint="Tên đội"
         android:inputType="textPersonName" />
 
+    <!-- Huấn luyện viên -->
     <EditText
         android:id="@+id/etCoach"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="HLV"
+        android:hint="Huấn luyện viên"
         android:inputType="textPersonName" />
 
+    <!-- Sân nhà -->
     <EditText
         android:id="@+id/etStadium"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Sân nhà"
-        android:inputType="text" />
+        android:inputType="textCapWords" />
 
 </LinearLayout>
-
-

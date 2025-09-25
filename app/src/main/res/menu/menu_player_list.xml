@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <!-- Tìm kiếm cầu thủ -->
+    <item
+        android:id="@+id/action_search_player"
+        android:title="@string/search"
+        android:icon="@drawable/ic_search_24"
+        app:showAsAction="ifRoom|collapseActionView"
+        app:actionViewClass="androidx.appcompat.widget.SearchView" />
+
+    <!-- Sắp xếp -->
+    <item
+        android:id="@+id/action_sort_player"
+        android:title="@string/sort"
+        android:icon="@drawable/ic_sort_24"
+        app:showAsAction="ifRoom" />
+
+    <!-- Làm mới -->
+    <item
+        android:id="@+id/action_refresh_player"
+        android:title="@string/refresh"
+        android:icon="@drawable/ic_refresh_24"
+        app:showAsAction="ifRoom" />
+
+</menu>

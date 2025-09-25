@@ -1,8 +1,11 @@
 package com.example.quanlygiaivodichbongda.ui.player
 
 import android.os.Bundle
+import android.view.View
+import android.widget.EditText
 import androidx.activity.ComponentActivity
 import androidx.activity.viewModels
+import androidx.appcompat.app.AlertDialog
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.room.Room
@@ -45,25 +48,28 @@ class PlayerListActivity : ComponentActivity() {
 
         viewModel.players.observe(this) { list -> adapter.submitList(list) }
 
-        findViewById<android.view.View>(R.id.fabAddPlayer).setOnClickListener { showAddPlayerDialog() }
+        findViewById<View>(R.id.fabAddPlayer).setOnClickListener { showAddPlayerDialog() }
     }
 
     private fun showAddPlayerDialog() {
         val view = layoutInflater.inflate(R.layout.dialog_add_player, null)
-        val etName = view.findViewById<android.widget.EditText>(R.id.etPlayerName)
-        val etNumber = view.findViewById<android.widget.EditText>(R.id.etNumber)
-        val etPosition = view.findViewById<android.widget.EditText>(R.id.etPosition)
-        val etDob = view.findViewById<android.widget.EditText>(R.id.etDob)
+        val etName = view.findViewById<EditText>(R.id.etPlayerName)
+        val etNumber = view.findViewById<EditText>(R.id.etNumber)
+        val etPosition = view.findViewById<EditText>(R.id.etPosition)
+        val etDob = view.findViewById<EditText>(R.id.etDob)
 
-        androidx.appcompat.app.AlertDialog.Builder(this)
+        AlertDialog.Builder(this)
             .setTitle(R.string.add_player_title)
             .setView(view)
-            .setNegativeButton(R.string.cancel, null)
+            .setNegativeButton(R.string.cancel) { dialog, _ ->
+                dialog.dismiss()
+            }
             .setPositiveButton(R.string.ok) { _, _ ->
                 val name = etName.text.toString().trim()
                 val number = etNumber.text.toString().trim().toIntOrNull()
                 val position = etPosition.text.toString().trim().ifEmpty { "" }
-                val dob = view.findViewById<android.widget.EditText>(R.id.etDob).text.toString().trim().ifEmpty { null }
+                val dob = etDob.text.toString().trim().ifEmpty { null }
+
                 if (name.isNotEmpty() && position.isNotEmpty()) {
                     val teamId = intent.getLongExtra(EXTRA_TEAM_ID, -1L)
                     viewModel.addPlayer(
@@ -80,5 +86,3 @@ class PlayerListActivity : ComponentActivity() {
             .show()
     }
 }
-
-
